@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createXMLHTTPObject() {
+        var XMLHTTPFactories = [
+            function () {
+                return new XMLHttpRequest();
+            },
+            function () {
+                return new ActiveXObject("Msxm12.XMLHTTP")
+            },
+            function () {
+                return new ActiveXObject("Msxm13.XMLHTTP")
+            },
+            function () {
+                return new ActiveXObject("Microsoft.XMLHTTP")
+            },
+        ];
+        var xmlhttp = false;
+        for (var i = 0; i < XMLHTTPFactories.length; i++) {
+            try {
+                xmlhttp = XMLHTTPFactories[i]();
+            } catch (e) {
+                continue;
+            }
+            break;
+        }
+        return xmlhttp;
+    }
+    var xmlHttp = createXMLHTTPObject();
+    xmlHttp.open("GET","www.baidu.com",true);
+    xmlHttp.send();
+    alert(xmlHttp.responseText);
+</script>
+</body>
+</html>

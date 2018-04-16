@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function add(a, b) {
+            if (add.length != arguments.length)
+                throw new Error("实参与形参不一致，请重新调用函数");
+            else
+                return a + b;
+        }
+        try {
+            alert(add(2));
+        } catch (e) {
+            alert(e.message);
+        }
+
+
+    </script>
+</head>
+<body>
+<script>
+    var b = [];
+    var c = [4, 5];
+    var a = function (a, b) {
+
+        return (a + b) / 2;
+    }(10, 20);
+    document.write("<b>" + a.toString())
+    b.push(1, 2, 2, 2);
+    b.pop();
+    b = b.join();
+    b = b.concat(c);
+    var e = "123";
+    var f = e - 1;
+    document.write( f + "<br/>");
+    document.write("<a>"+"www.baidu.com"+"</a>")
+    prompt(f);
+</script>
+</body>
+</html>
+

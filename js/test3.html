@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优酷</title>
+    <script>
+        var me = {
+            name: "张三",
+            say: function () {
+                return "hi js";
+            }
+        }
+        document.write("<h1>" + me.name + " : " + me.say() + "</h1>");
+    </script>
+    <script>
+        var me = ["掌声", function () {
+            return "hellow js";
+        }]
+        document.write("<h1>" + me[0] + ":" + me[1]() + "</h1>")
+    </script>
+    <!--script>
+    function max() {
+    1 < 2 ? (2 < 3 ? "3" : "2") : 1
+    }
+    document.write("<h1>" + max() + "</h1>")
+    </script>--><
+</head>
+<body>
+<script>
+    var a = 6;
+    document.write("<h1>" + typeof (a) + "</h1>")
+    try {
+        alert("执行程序");
+        var error = new Error("222");
+        throw error;
+    } catch (e) {
+        alert("错误名称：" + e.getName());
+    } finally {
+        alert("finally");
+    }
+
+</script>
+</body>
+</html>
